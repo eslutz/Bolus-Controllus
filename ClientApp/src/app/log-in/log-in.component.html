@@ -1,0 +1,6 @@
+<ng-container class="docWrap">
+  <h1>Welcome!</h1>
+  <h2>Enter your username: </h2>
+  <input type="text" #username (keyup.enter)="login(username.value)" autofocus />&nbsp;
+  <button class="add" (click)="login(username.value)">Login</button>
+</ng-container>

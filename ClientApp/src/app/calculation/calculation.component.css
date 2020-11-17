@@ -1,0 +1,13 @@
+table {
+  width: inherit;
+  white-space: nowrap;
+}
+
+td {
+  padding-left: 15px;
+  padding-bottom: 5px;
+}
+
+input.readonly {
+    border: none;
+}

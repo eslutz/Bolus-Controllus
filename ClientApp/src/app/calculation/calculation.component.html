@@ -1,0 +1,27 @@
+<app-nav-menu></app-nav-menu>
+<h1>Bolus Calculator</h1>
+<br />
+<table>
+  <tr>
+    <td>Current Blood Glucose (mg/dL)</td>
+    <td><input type="number" min="0" value="currentBG" step="1" [(ngModel)]="currentBG" (keyup)="calculate()" /></td>
+  </tr>
+  <tr>
+    <td>Carbs (g)</td>
+    <td><input type="number" min="0" value="carbs" step="1" [(ngModel)]="carbs" (keyup)="calculate()" /></td>
+  </tr>
+  <tr>
+    <td><b>Recommended Bolus</b><span class="material-icons md-dark" data-toggle="tooltip" title="Bolus recommendation based on your bolus settings.">info</span></td>
+    <td style="text-align: center;">{{calculate()}} units</td>
+  </tr>
+  <tr>
+    <td>
+      <button class="add" (click)="logBolus()" [ngClass]="{ 'inactiveButton':!active }">Administer Bolus</button>&nbsp;
+      <button class="add" routerLink="/home">Cancel</button>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>{{message}}</b></td>
+  </tr>
+</table>
+

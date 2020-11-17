@@ -1,0 +1,28 @@
+<app-nav-menu></app-nav-menu>
+<h1>Welcome to the Bolus Controllus!</h1>
+<br />
+<table>
+  <tr>
+    <td style="vertical-align: top; width:75px;">Active Insulin<span class="material-icons md-dark" data-toggle="tooltip" title="Insulin still active in your system. Based on your log history and your insulin duration.">info</span></td>
+    <td>{{activeInsulin}} units</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top; width: 75px;">Recent History</td>
+    <td>
+      <table style="width: 100%; white-space: nowrap;">
+        <tr>
+          <td class="header">Insulin Dose</td>
+          <td class="header">Blood Glucose</td>
+          <td class="header">Carbs</td>
+          <td class="header">Date</td>
+        </tr>
+        <tr *ngFor="let item of history | slice:0:3">
+          <td class="left">{{item.insulin}} units</td>
+          <td class="left">{{item.bloodGlucose}} mg/dL</td>
+          <td class="center">{{item.carbs}} g</td>
+          <td>{{FormatTime(item.time)}}</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

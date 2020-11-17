@@ -1,0 +1,21 @@
+table {
+  width: 90%;
+  max-width: 550px;
+  white-space: nowrap;
+}
+
+td {
+    padding-right: 15px;
+}
+
+td.header {
+  text-decoration: underline;
+}
+
+td.left {
+    min-width: 150px;
+}
+
+td.center {
+    width: 100%;
+}

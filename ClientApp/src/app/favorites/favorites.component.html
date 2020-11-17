@@ -1,0 +1,51 @@
+<app-nav-menu></app-nav-menu>
+<h1>Favorites</h1>
+<br />
+<button class="add" (click)="addFavorite()">Add Favorite</button>
+<br /><br />
+<table>
+  <tr>
+    <td class="header">Name</td>
+    <td class="header">Carbs</td>
+    <td class="header">Add to Calculator</td>
+  </tr>
+  <tr *ngFor="let item of favorite | slice:0:10">
+    <td class="left">{{item.mealName}}</td>
+    <td class="center">{{item.mealCarbs}} g</td>
+    <td style="text-align: center;"><input type="checkbox" id="{{item.mealName}}" (click)="sumCarbs(item.mealCarbs, item.mealName)" /></td>
+    <td>
+      <button class="edit" (click)="editFavorite(item)">edit</button>&nbsp;
+      <button class="delete" (click)="$event.target.blur();deleteFavorite(item.id);">
+        <span class="material-icons">delete</span>
+      </button>
+    </td>
+  </tr>
+  <tr>
+    <td class="center"></td>
+    <td></td>
+    <td style="text-align: center;">
+      Total Carbs: {{totalCarbs}}
+    </td>
+    <td>
+      <button class="add" routerLink="/calculate" [queryParams]="{carbs: totalCarbs}" >Calculate</button>
+    </td>
+  </tr>
+</table>
+<div [ngClass]="{ 'hidden':isHidden }">
+  <br />
+  <b>New Favorite</b>
+  <table>
+    <tr>
+      <td style="vertical-align: top;">Name</td>
+      <td><input [(ngModel)]="name" value="name" type="text" /></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Carbs (g)</td>
+      <td><input [(ngModel)]="carbs" value="carbs" type="number" min="0" /></td>
+    </tr>
+  </table>
+  <button [ngClass]="{ 'add':true, 'hidden':hiddenButton1 }" (click)="saveNewFavorite()">Save</button><button [ngClass]="{ 'add':true, 'hidden':hiddenButton2 }" (click)="updateFavorite()">Update</button>&nbsp;
+  <button class="add" (click)="cancelFavorite()">Cancel</button>
+  <br />
+  <b>{{message}}</b>
+</div>

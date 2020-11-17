@@ -1,0 +1,60 @@
+<app-nav-menu></app-nav-menu>
+<h1>Settings</h1>
+<br />
+<table>
+  <tr>
+    <td class="left">Carb Ratio<span class="material-icons md-dark" data-toggle="tooltip" title="How many grams of carbs will 1 unit of insulin cover.">info</span></td>
+    <td class="center">1u : {{carbRatio.carbRatio}}g</td>
+    <td><button class="edit" (click)="editCarbRatio(carbRatio)">edit</button></td>
+  </tr>
+  <tr>
+    <td class="left">Correction Ratio<span class="material-icons md-dark" data-toggle="tooltip" title="How much will 1 unit of insulin lower your blood glucose.">info</span></td>
+    <td class="center">1u : {{correctionRatio.correctionRatio}}mg/dL</td>
+    <td><button class="edit" (click)="editCorrectionRatio(correctionRatio)">edit</button></td>
+  </tr>
+  <tr>
+    <td class="left">Insulin Duration<span class="material-icons md-dark" data-toggle="tooltip" title="How long does the insulin stay active in your body.">info</span></td>
+    <td class="center">{{insulinDuration.duration}} hours</td>
+    <td><button class="edit" (click)="editInsulinDuration(insulinDuration)">edit</button></td>
+  </tr>
+</table>
+<br />
+<div [ngClass]="{ 'hidden':hideCarb }">
+  <h3>Edit Carb Ratio</h3>
+  <table>
+    <tr>
+      <td>Carb Ratio</td>
+      <td><input [(ngModel)]="carbs" value="carbs" type="number" min="0" /></td>
+    </tr>
+  </table>
+  <button class="add" (click)="updateCarbRatio()">Save</button>&nbsp;
+  <button class="add" (click)="cancel()">Cancel</button>
+  <br />
+  <b>{{message}}</b>
+</div>
+<div [ngClass]="{ 'hidden':hideCorrection }">
+  <h3>Edit Correction Ratio</h3>
+  <table>
+    <tr>
+      <td>Correction Ratio</td>
+      <td><input [(ngModel)]="correction" value="correction" type="number" min="0" /></td>
+    </tr>
+  </table>
+  <button class="add" (click)="updateCorrectionRatio()">Save</button>&nbsp;
+  <button class="add" (click)="cancel()">Cancel</button>
+  <br />
+  <b>{{message}}</b>
+</div>
+<div [ngClass]="{ 'hidden':hideDuration }">
+  <h3>Edit Insulin Duration</h3>
+  <table>
+    <tr>
+      <td>Insulin Duration</td>
+      <td><input [(ngModel)]="duration" value="duration" type="number" min="0" /></td>
+    </tr>
+  </table>
+  <button class="add" (click)="updateInsulinDuration()">Save</button>&nbsp;
+  <button class="add" (click)="cancel()">Cancel</button>
+  <br />
+  <b>{{message}}</b>
+</div>

@@ -1,0 +1,22 @@
+<app-nav-menu></app-nav-menu>
+<h1>History</h1>
+<br />
+<table>
+  <tr>
+    <td class="header">Insulin Dose</td>
+    <td class="header">Blood Glucose</td>
+    <td class="header">Carbs</td>
+    <td class="header">Date</td>
+  </tr>
+  <tr *ngFor="let item of history">
+    <td class="left">{{item.insulin}} units</td>
+    <td class="left">{{item.bloodGlucose}} mg/dL</td>
+    <td class="left">{{item.carbs}} g</td>
+    <td class="center">{{FormatTime(item.time)}}</td>
+    <td>
+      <button class="delete" (click)="$event.target.blur();deleteHistory(item.id);">
+        <span class="material-icons">delete</span>
+      </button>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,22 @@
+table {
+  width: 60%;
+  white-space: nowrap;
+}
+
+td.header {
+  text-decoration: underline;
+}
+
+td.left {
+    width: inherit;
+    text-align: left;
+}
+
+td.center {
+  width: 100%;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}

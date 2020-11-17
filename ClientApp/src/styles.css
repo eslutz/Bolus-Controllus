@@ -1,0 +1,68 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+button.delete {
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: transparent;
+  border: none;
+}
+
+button.edit {
+  background-color: #70CA7F;
+  border-style: none;
+  border-radius: 5px;
+  color: white;
+}
+
+button.add {
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #6DC3E7;
+  border-style: none;
+  border-radius: 5px;
+  color: white;
+}
+
+button.inactiveButton {
+  margin-top: auto;
+  margin-bottom: auto;
+  color: darkgrey;
+  background-color: #CFECF7;
+  border-style: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.material-icons {
+  font-size: 18px;
+  cursor: default;
+}
+
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.hidden {
+  display: none;
+}
+
+html, body {
+  font-family: 'Work Sans', sans-serif;
+  background-image: linear-gradient(#D7D7D7, #70CA7F);
+
+}
